@@ -32,23 +32,7 @@ export default {
   data() {
     return {
       newUser: {},
-      users: [
-        {
-          name: "John Doe",
-          email: "johndoe@gmail.com",
-          contacted: true
-        },
-        {
-          name: "Jane Austen",
-          email: "janeausten@gmail.com",
-          contacted: false
-        },
-        {
-          name: "Amy Hello",
-          email: "amyhello@gmail.com",
-          contacted: false
-        }
-      ]
+      users: []
     };
   },
   methods: {
@@ -65,6 +49,18 @@ export default {
       // and returns the removed item(s)
       this.users.splice(this.users.indexOf(user), 1);
     }
+  },
+  created: function() {
+    /* lifecycle hooks:
+        users can add their own code at specific stages of initialization
+        "created" hook use to run code after an instance is created
+    */
+    this.$http
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then(function(response) {
+        // console.log(response.data);
+        this.users = response.data;
+      });
   }
 };
 </script>
