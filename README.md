@@ -17,8 +17,8 @@ This is my VueJS application, created to learn Vue things. This app is mostly my
 - [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
 
 ### Resources
-
-- [YouTube tutorial](https://www.youtube.com/watch?v=Wy9q22isx3U)
+- [YouTube tutorial I](https://www.youtube.com/watch?v=z6hQqgvGI4Y)
+- [YouTube tutorial II](https://www.youtube.com/watch?v=Wy9q22isx3U)
 - [Sample github repo for vue app](https://github.com/bradtraversy/vue_crash_todolist)
 - https://vuejs.org/v2/guide/
 - [Axios resource](https://www.thepolyglotdeveloper.com/2017/10/consume-api-data-http-vuejs-web-application/)
