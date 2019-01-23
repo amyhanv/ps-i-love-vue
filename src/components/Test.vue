@@ -12,6 +12,21 @@
       </div>
     </div>
 
+    <div id="add-name" class="section-container">
+      <div class="section-content">
+        <p class="div-desc">
+          More
+          <b>v-model</b> and concat strings
+        </p>
+        <label>First name:</label>
+        <input type="text" v-model="user.firstName">
+        <br>
+        <label>Last name:</label>
+        <input type="text" v-model="user.lastName">
+        <h3>{{fullName}}</h3>
+      </div>
+    </div>
+
     <div id="elif" class="section-container">
       <div class="section-content">
         <p class="div-desc">
@@ -37,23 +52,25 @@
           <b>V-for</b> loops through each element in 'items' prespecified list
         </p>
         <ol>
-          <li v-for="element in items">{{element.title}}</li>
+          <li v-for="element in items">
+            <h3>{{element.title}}</h3>
+          </li>
         </ol>
       </div>
     </div>
 
-    <!-- events -->
-    <button v-on:click="greet">Say greeting</button>
-    <br>
-    <input type="text" v-on:keyup="pressKey" v-on:keyup.enter="enterHit">
-    <hr>
-    <label>First name:</label>
-    <input type="text" v-model="user.firstName">
-    <br>
-    <label>Last name:</label>
-    <input type="text" v-model="user.lastName">
-    <h3>{{fullName}}</h3>
-    <h2>{{msg}}</h2>
+    <div id="event" class="section-container">
+      <div class="section-content">
+        <p class="div-desc">
+          The
+          <b>v-on:___</b> directive listens to DOM events and run some JS when they’re triggered
+          <br>
+          <b>keyup</b> listens for keyboard events (often need to check for common key codes)
+        </p>
+        <input type="text" v-on:keyup="pressKey" v-on:keyup.enter="enterHit">
+        <button v-on:click="greet">Say greeting</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -89,7 +106,7 @@ export default {
       console.log(e.target.value);
     },
     enterHit: function() {
-      console.log("enter was hit");
+      alert("Hit the button, pls.");
     }
   },
   /* Diff b/w method: 
@@ -100,6 +117,7 @@ export default {
   computed: {
     fullName: function() {
       return this.user.firstName + " " + this.user.lastName;
+      this.user.firstName = "";
     }
   }
 };
@@ -108,6 +126,24 @@ export default {
 <style >
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Nunito+Sans");
 
+#nav {
+  text-align: center;
+  padding: 20px;
+}
+
+#nav li {
+  float: left;
+  padding: 0 20px;
+  font-family: "Roboto Mono";
+  text-transform: uppercase;
+  color: #000;
+  list-style-type: none;
+}
+
+#nav li:hover {
+  cursor: pointer;
+}
+
 /* remove preset class generated */
 .gorgias-loaded {
   margin: 0 !important;
@@ -115,6 +151,7 @@ export default {
 
 .test {
   font-family: "Roboto Mono";
+  font-weight: 400;
   text-align: center;
   padding: 0;
 }
@@ -159,6 +196,23 @@ export default {
 #title {
   background-color: antiquewhite;
 }
+
+.test button {
+  padding: 12px 15px;
+  margin: 15px 0;
+  border: 1px solid grey;
+  border-radius: 5px;
+  font-family: "Roboto Mono";
+  text-transform: uppercase;
+  color: grey;
+  background-color: transparent;
+}
+
+.test button:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px #fff;
+}
+
 h1,
 h3 {
   font-family: "Nunito Sans ";
@@ -178,6 +232,14 @@ h3 {
 
 #loop {
   background-color: #ffeaea;
+}
+
+#event {
+  background-color: #d2eae4;
+}
+
+#add-name {
+  background-color: #fff8c4;
 }
 </style>
 

@@ -36,7 +36,7 @@ new Vue({
   // components: { App },
   template: `
     <div id="app">
-      <ul>
+      <ul id="nav">
         <li><router-link to="/">Users</router-link></li>
         <li><router-link to="/test">Test</router-link></li>
       </ul>
