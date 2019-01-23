@@ -1,6 +1,6 @@
-# ps-i-love-vue
+# P.S. I Love Vue
 
-> A Vue.js project
+> A Vue.js project! Just learning vue things.
 
 ## Build Setup
 
